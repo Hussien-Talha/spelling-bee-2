@@ -1,81 +1,95 @@
+/* Base styles */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container {
+    max-width: 600px;
+    width: 90%;
     padding: 20px;
+    box-sizing: border-box;
 }
 
+/* Hide elements with the .hidden class */
 .hidden {
     display: none;
 }
 
+/* Responsive keyboard styling */
 .keyboard {
-    margin-top: 20px;
     display: grid;
     gap: 5px;
+    margin-top: 20px;
 }
 
 .keyboard-row {
     display: flex;
-    justify-content: center;
     gap: 5px;
+    justify-content: center;
 }
 
+/* Responsive keyboard buttons */
 .keyboard button {
-    padding: 10px 15px;
-    font-size: 16px;
+    padding: 10px 0;
+    font-size: 1.1rem;
     border: none;
     background-color: #4CAF50;
     color: white;
     cursor: pointer;
     border-radius: 5px;
+    flex: 1;
+    max-width: 45px;
 }
 
+/* Adjustments for mobile */
+@media (max-width: 600px) {
+    .keyboard button {
+        padding: 10px 0;
+        font-size: 1rem;
+        max-width: 35px;
+    }
+
+    .keyboard-row {
+        gap: 3px;
+    }
+}
+
+/* Button hover effect */
 .keyboard button:hover {
     background-color: #45a049;
 }
 
+/* Input styling */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+}
+
 button {
     padding: 10px 20px;
-    margin-top: 10px;
-    margin-right: 5px;
+    font-size: 1.1rem;
     border: none;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 5px;
+    background-color: #008CBA;
+    color: white;
     cursor: pointer;
-    font-size: 16px;
+    border-radius: 5px;
+    margin: 10px 5px;
 }
 
 button:hover {
-    background-color: #0056b3;
-}
-
-#hearAgainBtn {
-    background-color: #28a745;
-}
-
-#hearAgainBtn:hover {
-    background-color: #218838;
-}
-
-input {
-    padding: 8px;
-    width: 80%;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#feedback {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-p {
-    margin: 5px 0;
+    background-color: #007BA7;
 }
