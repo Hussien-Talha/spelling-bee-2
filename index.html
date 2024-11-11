@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible=IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spelling Bee Practice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="homePage" class="container">
+        <h1>Spelling Bee Practice</h1>
+        <h2>Select a Game Mode:</h2>
+        <button onclick="startQuiz('lives')">Lives Mode</button>
+        <button onclick="startCustomTimeMode()">Custom Time</button>
+        <button onclick="startCustomCorrectMode()">Custom Correct Answers</button>
+        <button onclick="startCustomMode()">Custom Mode</button>
+    </div>
+
+    <div id="quizContainer" class="hidden container">
+        <p>Timer: <span id="timer">--</span> seconds</p>
+        <p>Score: <span id="score">0</span></p>
+        <p>Right Answers: <span id="rightCount">0</span></p>
+        <p>Wrong Answers: <span id="wrongCount">0</span></p>
+        <p>Total Words Attempted: <span id="totalWords">0</span></p>
+        <p id="instruction">Listen to the word and type it:</p>
+        <input type="text" id="userInput" placeholder="Type here..." autocomplete="off">
+        <button id="submitBtn">Submit</button>
+        <button id="hearAgainBtn">Hear Again</button>
+        <button id="backToHomeBtn" onclick="backToHome()">Back to Home</button>
+        <p id="feedback"></p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
