@@ -38,3 +38,44 @@ body {
 .keyboard button:hover {
     background-color: #45a049;
 }
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-right: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#hearAgainBtn {
+    background-color: #28a745;
+}
+
+#hearAgainBtn:hover {
+    background-color: #218838;
+}
+
+input {
+    padding: 8px;
+    width: 80%;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#feedback {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+p {
+    margin: 5px 0;
+}
