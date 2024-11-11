@@ -11,8 +11,8 @@ body {
 }
 
 .container {
-    max-width: 600px;
-    width: 90%;
+    width: 100%;
+    max-width: 500px;
     padding: 20px;
     box-sizing: border-box;
 }
@@ -22,20 +22,15 @@ body {
     display: none;
 }
 
-/* Responsive keyboard styling */
+/* Keyboard grid layout */
 .keyboard {
     display: grid;
     gap: 5px;
     margin-top: 20px;
+    grid-template-columns: repeat(10, 1fr);
 }
 
-.keyboard-row {
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-}
-
-/* Responsive keyboard buttons */
+/* Button styling */
 .keyboard button {
     padding: 10px 0;
     font-size: 1.1rem;
@@ -44,20 +39,22 @@ body {
     color: white;
     cursor: pointer;
     border-radius: 5px;
-    flex: 1;
-    max-width: 45px;
 }
 
-/* Adjustments for mobile */
-@media (max-width: 600px) {
-    .keyboard button {
-        padding: 10px 0;
-        font-size: 1rem;
-        max-width: 35px;
+/* Responsive for mobile */
+@media (max-width: 500px) {
+    .container {
+        width: 100%;
+        padding: 10px;
     }
 
-    .keyboard-row {
-        gap: 3px;
+    .keyboard {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .keyboard button {
+        font-size: 1rem;
+        padding: 10px 0;
     }
 }
 
