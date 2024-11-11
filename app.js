@@ -9,7 +9,7 @@ let wrongAnswers = 0;
 let totalWordsAttempted = 0;
 let timerInterval;
 let timeLeft = 0;
-let livesLeft = 3; // Used in Lives mode
+let livesLeft = 3;
 let gameMode = '';
 let targetCorrectAnswers = null;
 let targetWrongAnswers = null;
@@ -68,6 +68,7 @@ function resetGame() {
     document.getElementById('wrongCount').textContent = wrongAnswers;
     document.getElementById('totalWords').textContent = totalWordsAttempted;
     clearInterval(timerInterval);
+    document.getElementById('userInput').value = '';
 }
 
 function configureGameMode() {
@@ -115,35 +116,33 @@ function checkAnswer() {
         score++;
         rightAnswers++;
         document.getElementById('feedback').textContent = "Correct!";
-        if (gameMode === 'customCorrect' && rightAnswers >= targetCorrectAnswers) {
-            endQuiz();
-            return;
-        }
     } else {
-        score--;
         wrongAnswers++;
-        if (gameMode === 'lives' && livesLeft !== null) {
-            livesLeft--;
-            if (livesLeft <= 0) {
-                endQuiz();
-                return;
-            }
-        }
-        if (gameMode === 'custom' && targetWrongAnswers !== null && wrongAnswers >= targetWrongAnswers) {
-            endQuiz();
-            return;
-        }
-        document.getElementById('feedback').textContent = `Incorrect! The correct spelling is: ${currentWord}`;
+        document.getElementById('feedback').textContent = "Incorrect!";
+        if (gameMode === 'lives') livesLeft--;
     }
+
     document.getElementById('score').textContent = score;
     document.getElementById('rightCount').textContent = rightAnswers;
     document.getElementById('wrongCount').textContent = wrongAnswers;
+
     document.getElementById('userInput').value = '';
     pickNewWord();
+
+    if (gameMode === 'lives' && livesLeft <= 0) endQuiz();
+}
+
+function addCharacter(character) {
+    document.getElementById('userInput').value += character;
+}
+
+function backspace() {
+    const currentInput = document.getElementById('userInput').value;
+    document.getElementById('userInput').value = currentInput.slice(0, -1);
 }
 
 function backToHome() {
-    clearInterval(timerInterval);
     document.getElementById('quizContainer').classList.add('hidden');
     document.getElementById('homePage').classList.remove('hidden');
+    clearInterval(timerInterval);
 }

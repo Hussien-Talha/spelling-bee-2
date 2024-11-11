@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible=IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spelling Bee Practice</title>
     <link rel="stylesheet" href="style.css">
@@ -24,7 +24,50 @@
         <p>Wrong Answers: <span id="wrongCount">0</span></p>
         <p>Total Words Attempted: <span id="totalWords">0</span></p>
         <p id="instruction">Listen to the word and type it:</p>
-        <input type="text" id="userInput" placeholder="Type here..." autocomplete="off" autocorrect="off" spellcheck="false" inputmode="none">
+        
+        <!-- Input field for user typing -->
+        <input type="text" id="userInput" placeholder="Type here..." autocomplete="off" autocorrect="off" spellcheck="false" readonly>
+        
+        <!-- Custom keyboard container in QWERTY layout -->
+        <div id="keyboard" class="keyboard">
+            <!-- QWERTY row 1 -->
+            <div class="keyboard-row">
+                <button onclick="addCharacter('q')">Q</button>
+                <button onclick="addCharacter('w')">W</button>
+                <button onclick="addCharacter('e')">E</button>
+                <button onclick="addCharacter('r')">R</button>
+                <button onclick="addCharacter('t')">T</button>
+                <button onclick="addCharacter('y')">Y</button>
+                <button onclick="addCharacter('u')">U</button>
+                <button onclick="addCharacter('i')">I</button>
+                <button onclick="addCharacter('o')">O</button>
+                <button onclick="addCharacter('p')">P</button>
+            </div>
+            <!-- QWERTY row 2 -->
+            <div class="keyboard-row">
+                <button onclick="addCharacter('a')">A</button>
+                <button onclick="addCharacter('s')">S</button>
+                <button onclick="addCharacter('d')">D</button>
+                <button onclick="addCharacter('f')">F</button>
+                <button onclick="addCharacter('g')">G</button>
+                <button onclick="addCharacter('h')">H</button>
+                <button onclick="addCharacter('j')">J</button>
+                <button onclick="addCharacter('k')">K</button>
+                <button onclick="addCharacter('l')">L</button>
+            </div>
+            <!-- QWERTY row 3 -->
+            <div class="keyboard-row">
+                <button onclick="addCharacter('z')">Z</button>
+                <button onclick="addCharacter('x')">X</button>
+                <button onclick="addCharacter('c')">C</button>
+                <button onclick="addCharacter('v')">V</button>
+                <button onclick="addCharacter('b')">B</button>
+                <button onclick="addCharacter('n')">N</button>
+                <button onclick="addCharacter('m')">M</button>
+                <button onclick="backspace()">⌫</button>
+            </div>
+        </div>
+
         <button id="submitBtn">Submit</button>
         <button id="hearAgainBtn">Hear Again</button>
         <button id="backToHomeBtn" onclick="backToHome()">Back to Home</button>
