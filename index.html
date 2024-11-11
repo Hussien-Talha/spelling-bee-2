@@ -26,10 +26,13 @@
         <p id="instruction">Listen to the word and type it:</p>
         
         <!-- Input field for user typing -->
-        <input type="text" id="userInput" placeholder="Type here..." autocomplete="off" autocorrect="off" spellcheck="false" readonly>
+        <input type="text" id="userInput" placeholder="Type here..." autocomplete="off" autocorrect="off" spellcheck="false">
+
+        <!-- Toggle button for keyboard -->
+        <button id="toggleKeyboardBtn" onclick="toggleKeyboard()">Toggle Keyboard</button>
         
         <!-- Custom keyboard container in QWERTY layout -->
-        <div id="keyboard" class="keyboard">
+        <div id="keyboard" class="keyboard hidden">
             <!-- QWERTY row 1 -->
             <div class="keyboard-row">
                 <button onclick="addCharacter('q')">Q</button>

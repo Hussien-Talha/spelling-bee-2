@@ -27,10 +27,14 @@ body {
     display: grid;
     gap: 5px;
     margin-top: 20px;
-    grid-template-columns: repeat(10, 1fr);
 }
 
-/* Button styling */
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
 .keyboard button {
     padding: 10px 0;
     font-size: 1.1rem;
@@ -39,22 +43,14 @@ body {
     color: white;
     cursor: pointer;
     border-radius: 5px;
+    flex: 1;
 }
 
 /* Responsive for mobile */
 @media (max-width: 500px) {
-    .container {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .keyboard {
-        grid-template-columns: repeat(5, 1fr);
-    }
-
-    .keyboard button {
+    .keyboard-row button {
         font-size: 1rem;
-        padding: 10px 0;
+        padding: 10px;
     }
 }
 
